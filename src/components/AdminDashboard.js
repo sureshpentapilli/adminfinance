@@ -18,7 +18,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/admin/users", {
+      const response = await axios.get("https://backendfinance-ofpv.onrender.com/admin/users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
 
         // Update the user status and fetch the updated list in response
         const response = await axios.put(
-          "http://localhost:5000/admin/manageuser",
+          "https://backendfinance-ofpv.onrender.com/admin/manageuser",
           { userId, status },
           {
             headers: {
