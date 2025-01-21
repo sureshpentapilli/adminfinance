@@ -1,0 +1,48 @@
+.admin-dashboard-bg {
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.479)), url('../../public/images/admindashboard2.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+ 
+  
+
+ 
+
+  .table {
+    --bs-table-bg: transparent !important; /* Reset the Bootstrap background */
+    background-color: transparent !important; /* Ensure background is transparent */
+    box-shadow: none !important; /* Remove any shadows if present */
+  }
+
+  /* Table text color */
+.table {
+    color: white; /* Set text color to white for the entire table */
+  }
+  
+  /* Table head text color */
+  .table thead th {
+    color: white; /* Text color for table head */
+    background-color: #343a40; /* Optional: Dark background for contrast */
+    border-color: #454d55; /* Optional: Light border for better visibility */
+    border: 1px solid #555;
+  }
+  
+  /* Table body rows text color */
+  .table tbody td {
+    color: white; /* Text color for table body rows */
+    background-color: transparent; /* Optional: Ensure transparent background */
+    border: 1px solid #555;
+  }
+  
+  /* Adjust borders for better contrast */
+  .table-bordered th, 
+  .table-bordered td {
+    border: 1px solid #555; /* Light border for visibility */
+  }
+  
+  
+  
+  
+  

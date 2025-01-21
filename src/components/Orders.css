@@ -1,0 +1,7 @@
+.order-dashboard-bg {
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url('../../public/images/admindashboard1.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
