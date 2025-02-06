@@ -58,7 +58,7 @@ const CreditDetailsTable = () => {
 
       // Update the credits list after rejection
       const updatedCredits = await axios.get(
-        "https://backendfinance-ofpv.onrender.com/admin/creditfetch",
+        "https://backendcheck-hlpb.onrender.com/admin/creditfetch",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -85,7 +85,7 @@ const CreditDetailsTable = () => {
       const payload = { status: "approved", approvedDays };
 
       await axios.put(
-        `https://backendfinance-ofpv.onrender.com/admin/credit/${selectedCredit._id}`,
+        `https://backendcheck-hlpb.onrender.com/admin/credit/${selectedCredit._id}`,
         payload,
         {
           headers: {
