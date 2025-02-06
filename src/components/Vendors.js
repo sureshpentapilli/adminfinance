@@ -19,7 +19,7 @@ const Vendors = () => {
 
   const fetchVendors = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/vendors");
+      const { data } = await axios.get("https://backendcheck-hlpb.onrender.com/vendors");
       setVendors(data);
     } catch (err) {
       setError("Failed to fetch vendors");
@@ -39,7 +39,7 @@ const Vendors = () => {
   
       const token = localStorage.getItem("adminToken");
   
-      await axios.post("http://localhost:5000/admin/vendors", formData, {
+      await axios.post("https://backendcheck-hlpb.onrender.com/admin/vendors", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -75,7 +75,7 @@ const Vendors = () => {
   const handleDeleteVendor = async (vendorId) => {
     if (!window.confirm("Are you sure you want to delete this vendor?")) return;
     try {
-      await axios.delete(`http://localhost:5000/vendors/${vendorId}`);
+      await axios.delete(`https://backendcheck-hlpb.onrender.com/admin/vendors/${vendorId}`);
       fetchVendors();
     } catch (err) {
       setError("Failed to delete vendor");
