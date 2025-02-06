@@ -18,7 +18,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://backendfinance-ofpv.onrender.com/admin/users", {
+      const response = await axios.get("https://backendcheck-hlpb.onrender.com/admin/users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
 
         // Update the user status and fetch the updated list in response
         const response = await axios.put(
-          "https://backendfinance-ofpv.onrender.com/admin/manageuser",
+          "https://backendcheck-hlpb.onrender.com/admin/manageuser",
           { userId, status },
           {
             headers: {
@@ -158,7 +158,7 @@ const AdminDashboard = () => {
                 </td>
                 <td>
                   <img
-                    src={`http://localhost:5000${
+                    src={`https://backendcheck-hlpb.onrender.com${
                       user.tradeLicense
                     }?t=${new Date().getTime()}`}
                     alt="Trade License"
@@ -170,7 +170,7 @@ const AdminDashboard = () => {
                     }}
                     onClick={() =>
                       handleImageClick(
-                        `http://localhost:5000${
+                        `https://backendcheck-hlpb.onrender.com${
                           user.tradeLicense
                         }?t=${new Date().getTime()}`
                       )
@@ -180,7 +180,7 @@ const AdminDashboard = () => {
                 <td>
                   {user.auditedFinancials ? (
                     <img
-                      src={`http://localhost:5000${user.auditedFinancials}`}
+                      src={`https://backendcheck-hlpb.onrender.com${user.auditedFinancials}`}
                       alt="Audited Financials"
                       className="img-thumbnail"
                       style={{
@@ -190,7 +190,7 @@ const AdminDashboard = () => {
                       }}
                       onClick={() =>
                         handleImageClick(
-                          `http://localhost:5000${user.auditedFinancials}`
+                          `https://backendcheck-hlpb.onrender.com${user.auditedFinancials}`
                         )
                       } // Open the modal with the image
                     />
