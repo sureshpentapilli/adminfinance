@@ -19,7 +19,7 @@ const CreditDetailsTable = () => {
     const fetchCredits = async () => {
       try {
         const response = await axios.get(
-          "https://backendfinance-ofpv.onrender.com/admin/creditfetch",
+          "https://backendcheck-hlpb.onrender.com/admin/creditfetch",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -47,7 +47,7 @@ const CreditDetailsTable = () => {
       const payload = { status: "rejected" };
 
       await axios.put(
-        `https://backendfinance-ofpv.onrender.com/admin/credit/${credit._id}`,
+        `https://backendcheck-hlpb.onrender.com/admin/credit/${credit._id}`,
         payload,
         {
           headers: {
@@ -96,7 +96,7 @@ const CreditDetailsTable = () => {
 
       // Refetch credits list
       const updatedCredits = await axios.get(
-        "https://backendfinance-ofpv.onrender.com/admin/creditfetch",
+        "https://backendcheck-hlpb.onrender.com/admin/creditfetch",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
