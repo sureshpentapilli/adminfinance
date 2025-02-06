@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button, Spinner } from "react-bootstrap"; // Using Bootstrap components for enhanced UI
 import { FaCheck, FaTimes, FaEye, FaSignOutAlt } from "react-icons/fa"; // Icons for actions
 import Sidebar from "../../src/components/Sidebar"; // Import Sidebar
-import "./AdminDashboard.css"
+import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]); // State for all users
@@ -23,6 +23,7 @@ const AdminDashboard = () => {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
       });
+      console.log(response.data,"register")
       setUsers(response.data); // Update users state
       setError("");
     } catch (err) {
@@ -65,6 +66,7 @@ const AdminDashboard = () => {
 
         // Update the users state with the full updated user list
         setUsers(response.data);
+       
 
         // Set alert message based on status
         const message =
@@ -110,13 +112,15 @@ const AdminDashboard = () => {
             <FaSignOutAlt /> Logout
           </button>
         </div>
-        <h2 className="text-center mb-4" style={{color:"white"}}>Admin Dashboard</h2>
+        <h2 className="text-center mb-4" style={{ color: "white" }}>
+          Admin Dashboard
+        </h2>
         {error && <div className="alert alert-danger">{error}</div>}
 
         {/* Display alert message */}
         {alertMessage && <div className="alert alert-info">{alertMessage}</div>}
 
-        <h3 style={{color:"white"}}>All Users</h3>
+        <h3 style={{ color: "white" }}>All Users</h3>
         {loading && (
           <div className="d-flex justify-content-center my-4">
             <Spinner animation="border" variant="primary" />
@@ -154,7 +158,9 @@ const AdminDashboard = () => {
                 </td>
                 <td>
                   <img
-                    src={user.tradeLicense}
+                    src={`http://localhost:5000${
+                      user.tradeLicense
+                    }?t=${new Date().getTime()}`}
                     alt="Trade License"
                     className="img-thumbnail"
                     style={{
@@ -162,7 +168,13 @@ const AdminDashboard = () => {
                       maxWidth: "100px",
                       maxHeight: "100px",
                     }}
-                    onClick={() => handleImageClick(user.tradeLicense)} // Open the modal with the image
+                    onClick={() =>
+                      handleImageClick(
+                        `http://localhost:5000${
+                          user.tradeLicense
+                        }?t=${new Date().getTime()}`
+                      )
+                    }
                   />
                 </td>
                 <td>
