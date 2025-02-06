@@ -30,7 +30,7 @@ const AdminLogin = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('https://backendfinance-ofpv.onrender.com/admin/login', { email, password });
+      const response = await axios.post('https://backendcheck-hlpb.onrender.com/admin/login', { email, password });
       localStorage.setItem('adminToken', response.data.token);
       navigate('/admin');
     } catch (err) {
